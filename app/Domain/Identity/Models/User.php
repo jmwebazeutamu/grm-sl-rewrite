@@ -46,6 +46,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'organization_id',
         'office_id',
         'is_active',
+        'expo_push_token',
     ];
 
     protected $hidden = [
@@ -95,6 +96,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function routeNotificationForSms(): ?string
     {
         return $this->phone_number;
+    }
+
+    public function routeNotificationForExpo(): ?string
+    {
+        return $this->getAttribute('expo_push_token');
     }
 
     /**

@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Domain\Grievance\Notifications;
 
 use App\Domain\Grievance\Models\Grievance;
+use App\Domain\Notification\Channels\ExpoChannel;
+use App\Domain\Notification\Channels\ExpoMessage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -26,9 +28,24 @@ class GrievanceAssignedNotification extends Notification implements ShouldQueue
     /** @return list<string> */
     public function via(mixed $notifiable): array
     {
-        return array_intersect(
+        $channels = array_values(array_intersect(
             $notifiable->preferredChannels(),
             ['database', 'mail'],
+        ));
+
+        if ($notifiable->routeNotificationFor('expo')) {
+            $channels[] = ExpoChannel::class;
+        }
+
+        return $channels;
+    }
+
+    public function toExpo(mixed $notifiable): ExpoMessage
+    {
+        return new ExpoMessage(
+            title: 'New assignment',
+            body: "You've been assigned {$this->grievance->g_number}.",
+            data: ['grievance_id' => $this->grievance->id, 'g_number' => $this->grievance->g_number, 'kind' => 'assigned'],
         );
     }
 

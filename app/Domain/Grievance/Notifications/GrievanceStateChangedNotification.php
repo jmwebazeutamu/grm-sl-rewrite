@@ -6,6 +6,8 @@ namespace App\Domain\Grievance\Notifications;
 
 use App\Domain\Grievance\Enums\GrievanceState;
 use App\Domain\Grievance\Models\Grievance;
+use App\Domain\Notification\Channels\ExpoChannel;
+use App\Domain\Notification\Channels\ExpoMessage;
 use App\Domain\Notification\Channels\SmsMessage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -37,8 +39,20 @@ class GrievanceStateChangedNotification extends Notification implements ShouldQu
         if ($notifiable->routeNotificationFor('sms')) {
             $channels[] = 'sms';
         }
+        if ($notifiable->routeNotificationFor('expo')) {
+            $channels[] = ExpoChannel::class;
+        }
 
         return $channels;
+    }
+
+    public function toExpo(mixed $notifiable): ExpoMessage
+    {
+        return new ExpoMessage(
+            title: "Grievance {$this->grievance->g_number}",
+            body: "Status changed to {$this->to->label()}.",
+            data: ['g_number' => $this->grievance->g_number, 'state' => $this->to->value, 'kind' => 'state_change'],
+        );
     }
 
     public function toMail(mixed $notifiable): MailMessage

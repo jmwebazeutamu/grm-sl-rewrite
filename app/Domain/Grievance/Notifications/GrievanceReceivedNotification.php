@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Domain\Grievance\Notifications;
 
 use App\Domain\Grievance\Models\Grievance;
+use App\Domain\Notification\Channels\ExpoChannel;
+use App\Domain\Notification\Channels\ExpoMessage;
 use App\Domain\Notification\Channels\SmsMessage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -33,8 +35,20 @@ class GrievanceReceivedNotification extends Notification implements ShouldQueue
         if ($notifiable->routeNotificationFor('sms')) {
             $channels[] = 'sms';
         }
+        if ($notifiable->routeNotificationFor('expo')) {
+            $channels[] = ExpoChannel::class;
+        }
 
         return $channels;
+    }
+
+    public function toExpo(mixed $notifiable): ExpoMessage
+    {
+        return new ExpoMessage(
+            title: 'Grievance filed',
+            body: "Your grievance {$this->grievance->g_number} has been received.",
+            data: ['g_number' => $this->grievance->g_number, 'kind' => 'received'],
+        );
     }
 
     public function toMail(mixed $notifiable): MailMessage
