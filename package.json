@@ -1,0 +1,57 @@
+{
+    "name": "grm-sl",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc --noEmit && vite build",
+        "build:ssr": "vite build && vite build --ssr",
+        "lint": "eslint resources/js --ext .ts,.vue --max-warnings=0",
+        "lint:fix": "eslint resources/js --ext .ts,.vue --fix",
+        "format": "prettier --write resources/js",
+        "format:check": "prettier --check resources/js",
+        "typecheck": "vue-tsc --noEmit",
+        "test": "vitest run",
+        "test:watch": "vitest"
+    },
+    "dependencies": {
+        "@inertiajs/vue3": "^2.0.0",
+        "@vueuse/core": "^11.0.0",
+        "@vueuse/head": "^2.0.0",
+        "axios": "^1.7.0",
+        "dompurify": "^3.1.0",
+        "radix-vue": "^1.9.0",
+        "tailwind-merge": "^2.5.0",
+        "vue": "^3.4.0",
+        "ziggy-js": "^2.1.0"
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.7",
+        "@tailwindcss/typography": "^0.5.13",
+        "@types/dompurify": "^3.0.5",
+        "@types/node": "^20.14.0",
+        "@typescript-eslint/eslint-plugin": "^7.18.0",
+        "@typescript-eslint/parser": "^7.18.0",
+        "@vitejs/plugin-vue": "^5.1.0",
+        "@vue/eslint-config-prettier": "^9.0.0",
+        "@vue/eslint-config-typescript": "^13.0.0",
+        "@vue/test-utils": "^2.4.6",
+        "@vue/tsconfig": "^0.5.1",
+        "autoprefixer": "^10.4.19",
+        "eslint": "^8.57.0",
+        "eslint-plugin-vue": "^9.27.0",
+        "jsdom": "^25.0.0",
+        "laravel-vite-plugin": "^1.0.0",
+        "postcss": "^8.4.38",
+        "prettier": "^3.3.0",
+        "prettier-plugin-tailwindcss": "^0.6.0",
+        "tailwindcss": "^3.4.0",
+        "typescript": "^5.5.0",
+        "vite": "^5.4.0",
+        "vitest": "^2.0.0",
+        "vue-tsc": "^2.0.0"
+    },
+    "engines": {
+        "node": ">=20.0.0"
+    }
+}

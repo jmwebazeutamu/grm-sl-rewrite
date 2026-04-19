@@ -1,0 +1,2718 @@
+[
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Dea",
+    "section": "Baiwalla",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Dea",
+    "section": "Dodo",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Jahn",
+    "section": "Falley",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Jawie",
+    "section": "Sowa",
+    "locality": "Daru"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Kissi Teng",
+    "section": "Torli",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Kissi Tongi",
+    "section": "Bende Bengu",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Kissi Tongi",
+    "section": "Lower Konio",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Luawa",
+    "section": "Luawa Foguiya",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Malema",
+    "section": "Njagbla",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Malema",
+    "section": "Upper Sami",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Mandu",
+    "section": "Gbongre",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Mandu",
+    "section": "Lower Kuiva",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Mandu",
+    "section": "Upper Kuiva",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Njaluahun",
+    "section": "Bombowa",
+    "locality": "Lalehun Town"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Njaluahun",
+    "section": "Lower Nyawa",
+    "locality": "Fola"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Njaluahun",
+    "section": "Sei I",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Njaluahun",
+    "section": "Sei II",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Penguia",
+    "section": "Lombama",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Upper Bambara",
+    "section": "Korbu",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KAILAHUN",
+    "chiefdom": "Upper Bambara",
+    "section": "Naiahun",
+    "locality": "Kailahun District"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Kenema City",
+    "section": "Gbo Kakajama A-Lumbebu",
+    "locality": "kenema City"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Langrama",
+    "section": "Korjei",
+    "locality": "Kenema District"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Lower Bambara",
+    "section": "Sei",
+    "locality": "Lowuma"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Malegohun",
+    "section": "Fowaya",
+    "locality": "Fowaya"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Malegohun",
+    "section": "Fowaya",
+    "locality": "Massaru"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Malegohun",
+    "section": "Tormaju",
+    "locality": "Tormaju"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Nongowa",
+    "section": "Gbo Kakajama B",
+    "locality": "Kenema District"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Simbaru",
+    "section": "Yalenga",
+    "locality": "Kpah"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Simbaru",
+    "section": "Yalenga",
+    "locality": "Sahn"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Simbaru",
+    "section": "Yallannga",
+    "locality": "Boajibu"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Small Bo",
+    "section": "Liemei",
+    "locality": "Liemei"
+  },
+  {
+    "region": "EAST",
+    "district": "KENEMA",
+    "chiefdom": "Small Bo",
+    "section": "Nyawa",
+    "locality": "Liemei"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Fiama",
+    "section": "Fiama",
+    "locality": "Jagbwema (A)"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Fiama",
+    "section": "Fiama",
+    "locality": "Kono District"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Fiama",
+    "section": "Fiama",
+    "locality": "Madina"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Fiama",
+    "section": "Fiama",
+    "locality": "Tuiyor"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Fiama",
+    "section": "Kooma",
+    "locality": "Kondor"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Fiama",
+    "section": "Kooma",
+    "locality": "Kono District"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Fiama",
+    "section": "Yorkor",
+    "locality": "Kono District"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Fiama",
+    "section": "Yorkor",
+    "locality": "Meiyor"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Gbane Kandor",
+    "section": "Gbane Kandor",
+    "locality": "Fanda I"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Gbane Kandor",
+    "section": "Gbane Tetema",
+    "locality": "Koardu"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Gbane Kandor",
+    "section": "Gbendekor",
+    "locality": "Dembo"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Gbane Kandor",
+    "section": "Gbendekor",
+    "locality": "Kpekor"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Gbane Kandor",
+    "section": "Gbendekor",
+    "locality": "Nongowa II"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Gbense",
+    "section": "Banyakor",
+    "locality": "Bendu"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Koidu City",
+    "section": "Gbense-Moindefeh B",
+    "locality": "Koidu/New Sembehun City"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Koidu City",
+    "section": "Tankoro-Lebanon",
+    "locality": "Koidu/New Sembehun City"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Lei",
+    "section": "Kamara",
+    "locality": "Kissidu"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Lei",
+    "section": "Lei",
+    "locality": "Komba-Yendeh"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Lei",
+    "section": "Lei",
+    "locality": "Saiama"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Lei",
+    "section": "Yawai",
+    "locality": "Bendu"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Mafindor",
+    "section": "Kamiendor",
+    "locality": "Hunweleh"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Nimikoro",
+    "section": "Gbogboafeh",
+    "locality": "Kono District"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Nimikoro",
+    "section": "Jaiama",
+    "locality": "Bongema I"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Nimikoro",
+    "section": "Jaiama",
+    "locality": "Kono District"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Nimikoro",
+    "section": "Masayiefeh",
+    "locality": "Bandama-1"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Sandor",
+    "section": "Gbanbiadu",
+    "locality": "Gbanbiadu"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Sandor",
+    "section": "Samgbafeh",
+    "locality": "Kono District"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Sandor",
+    "section": "Sumunjifeh",
+    "locality": "Kono District"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Sandor",
+    "section": "Sumunjifeh",
+    "locality": "Wordu A"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Sandor",
+    "section": "Yawatanda",
+    "locality": "Kayima A"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Soa",
+    "section": "Kokongokuma",
+    "locality": "Bendu"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Soa",
+    "section": "Kokongokuma",
+    "locality": "kainkordu"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Soa",
+    "section": "Mofinkor",
+    "locality": "Kayia"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Soa",
+    "section": "Tensendakor",
+    "locality": "Baidu"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Tankoro",
+    "section": "Njama",
+    "locality": "Baima"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Tankoro",
+    "section": "Njama",
+    "locality": "Kono District"
+  },
+  {
+    "region": "EAST",
+    "district": "KONO",
+    "chiefdom": "Tankoro",
+    "section": "Tankoro",
+    "locality": "Senehun"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Biriwa",
+    "section": "Bumban",
+    "locality": "Kadala II"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Biriwa",
+    "section": "Bumban",
+    "locality": "Kakekor"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Biriwa",
+    "section": "Bumban",
+    "locality": "Kamathidi,"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Biriwa",
+    "section": "Kamabai",
+    "locality": "Kamagbaitha"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Biriwa",
+    "section": "Kamanko",
+    "locality": "Kamaron,"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Gbanti",
+    "section": "Mabanta",
+    "locality": "3 mile Gbasia"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Gbendembu Ngowa",
+    "section": "Gbendembu",
+    "locality": "Gbedembu Town"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Kamaranka",
+    "section": "Makapr",
+    "locality": "Rosint II,"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Magbaimba Ndorwahun",
+    "section": "Makendema",
+    "locality": "Nyeayawa"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Makeni City",
+    "section": "Banana Ward",
+    "locality": "Makeni City"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Makeni City",
+    "section": "Kagbaran Dokom",
+    "locality": "Makeni City"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Makeni City",
+    "section": "Mayanka I Ward",
+    "locality": "Makeni City"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Makeni City",
+    "section": "Rogbaneh",
+    "locality": "Rogbaneh"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "N'gowahun",
+    "section": "Kalangba",
+    "locality": "Mayengi"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "N'gowahun",
+    "section": "Masongbo",
+    "locality": "Masongbo Loko"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Safroko Limba",
+    "section": "Binkolo",
+    "locality": "Thakoblo"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Safroko Limba",
+    "section": "Mabamba",
+    "locality": "Kamonkoin (Kamon Koin‚Ä¶"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Safroko Limba",
+    "section": "Mabamba",
+    "locality": "Kataneh"
+  },
+  {
+    "region": "NORTH",
+    "district": "BOMBALI",
+    "chiefdom": "Safroko Limba",
+    "section": "Mabamba",
+    "locality": "Masama"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Delemandugu",
+    "section": "Benadugu",
+    "locality": "Masandu"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Delemandugu",
+    "section": "Benadugu",
+    "locality": "Shekuya"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Delemandugu",
+    "section": "Upper Deldugu",
+    "locality": "Samendu"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Dembelia Mussia",
+    "section": "Musaic",
+    "locality": "Tamayeya"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Dembelia-Sinkunia",
+    "section": "Foraia",
+    "locality": "Koinadugu District"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Folosaba",
+    "section": "Gbentu",
+    "locality": "Folereh"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Kebelia",
+    "section": "Ganya",
+    "locality": "Karafaya"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Kulor Saradu",
+    "section": "Lower Saradu",
+    "locality": "Kulia"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Kulor Saradu",
+    "section": "Upper Saradu",
+    "locality": "Burufesineya"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Kulor Saradu",
+    "section": "Upper Saradu",
+    "locality": "Fasumbuya"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Kulor Saradu",
+    "section": "Upper Saradu",
+    "locality": "Kenema"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Kulor Saradu",
+    "section": "Upper Saradu",
+    "locality": "Nyandankoro"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Kulor Saradu",
+    "section": "Upper Saradu",
+    "locality": "Saradu Porpon"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Mongo",
+    "section": "Mongo",
+    "locality": "Court Barry"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Mongo",
+    "section": "Mongo",
+    "locality": "Muiti Purpose Hall"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Mongo",
+    "section": "Mongo III",
+    "locality": "Court Barry"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Mongo",
+    "section": "Mongo III",
+    "locality": "Multi Purpose Hall"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Morifindugu",
+    "section": "Morifdugu",
+    "locality": "Gbarifeh"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Neya",
+    "section": "Neya II",
+    "locality": "Kargboya,"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Neya",
+    "section": "Neya II",
+    "locality": "Mania II"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Neya",
+    "section": "Upper Naya I",
+    "locality": "Faragbema"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Neya",
+    "section": "Upper Naya I",
+    "locality": "Kumbaforia"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Neya",
+    "section": "Upper Neya I",
+    "locality": "Dombosulnia"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Neya",
+    "section": "Upper Neya I",
+    "locality": "Kumbaforia"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Sulima",
+    "section": "Gberia-Timbako",
+    "locality": "Ballaia,"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Sulima",
+    "section": "Gberia-Timbako",
+    "locality": "Dara,"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Sulima",
+    "section": "Gberia-Timbako",
+    "locality": "Sulima"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Sulima",
+    "section": "Kambaia",
+    "locality": "Teradansaya"
+  },
+  {
+    "region": "NORTH",
+    "district": "FALABA",
+    "chiefdom": "Wollay Barawa",
+    "section": "Barawa",
+    "locality": "Firawa Town"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Gbonkobon Kayaka",
+    "section": "Gbonkobor",
+    "locality": "Kafe"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Kamukeh",
+    "section": "Kambalia",
+    "locality": "Wulia"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Kamukeh",
+    "section": "Pampakoh",
+    "locality": "Kumba,"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Kamukeh",
+    "section": "Pampakoh",
+    "locality": "New-Panpako,"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Kamukeh",
+    "section": "Pampakoh",
+    "locality": "Turaya,"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Kamukeh",
+    "section": "Taelia",
+    "locality": "Teleya I"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Kamukeh",
+    "section": "Taelia",
+    "locality": "Teleya II"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Nieni",
+    "section": "Nieni",
+    "locality": "Dambaya,"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Nieni",
+    "section": "Nieni",
+    "locality": "Fankoya I"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Nieni",
+    "section": "Nieni",
+    "locality": "Kaloya,"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Nieni",
+    "section": "Nieni",
+    "locality": "Nlyandankolia,"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Sebengeh",
+    "section": "Kawusoh",
+    "locality": "Government Technical Institute"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Sengbe",
+    "section": "Yogomaia",
+    "locality": "Koinadugu District"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Wara Wara Bafodia",
+    "section": "Bafodia",
+    "locality": "Bafodia town"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Wara Wara Bafodia",
+    "section": "Kadanso",
+    "locality": "Kadanso"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Wara Wara Bafodia",
+    "section": "Kakoya",
+    "locality": "Kamatengbeh II,"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Wara Wara Bafodia",
+    "section": "Kamagbengben",
+    "locality": "Kakasakie"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Wara Wara Bafodia",
+    "section": "Kamagbengben",
+    "locality": "Kakassia"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Wara Wara Bafodia",
+    "section": "Semamaia",
+    "locality": "Kamakosa"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Wara Wara Bafodia",
+    "section": "Yataya",
+    "locality": "Madina 1"
+  },
+  {
+    "region": "NORTH",
+    "district": "KOINADUGU",
+    "chiefdom": "Wara Wara Yagalla",
+    "section": "Yataya",
+    "locality": "Kabala"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kafe",
+    "section": "Kamarugu",
+    "locality": "Bolaneh,"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kafe",
+    "section": "Kamarugu",
+    "locality": "Kamarugu"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kalanthuba",
+    "section": "Fuladugu",
+    "locality": "Alpha Bah Woreh,"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kalanthuba",
+    "section": "Fuladugu",
+    "locality": "Kathengbeng"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kalanthuba",
+    "section": "Kamakathie",
+    "locality": "Kadanso,"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kalanthuba",
+    "section": "Kasokira",
+    "locality": "Kamera,"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kholifa Mabang",
+    "section": "Rogbabai",
+    "locality": "Mafang,"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kholifa Mamuntha/Mayosso",
+    "section": "Mamuntha",
+    "locality": "Mathonka"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kholifa Rowala",
+    "section": "Mayatha",
+    "locality": "Mayatha"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kholifa Rowala",
+    "section": "Old Magburaka",
+    "locality": "Old Magburaka Town"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kholifa Rowala",
+    "section": "Rowala",
+    "locality": "Magburaka"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kunike Barina",
+    "section": "Makong",
+    "locality": "Liberia Compound ,"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kunike Barina",
+    "section": "Makong",
+    "locality": "Makong"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kunike Barina",
+    "section": "Mathonkana",
+    "locality": "Madina"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kunike Barina",
+    "section": "Wara",
+    "locality": "Petifu Mandugu"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kunike Barina",
+    "section": "Wonkibor",
+    "locality": "Wonkibor"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kunike Sanda",
+    "section": "Masingbi",
+    "locality": "Masingbi Town"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Kunike Sanda",
+    "section": "Sanda",
+    "locality": "Magbonka"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Malal",
+    "section": "Rochen",
+    "locality": "Ropolon - II"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Mayeppoh",
+    "section": "Mayeppoh",
+    "locality": "Mathombo,"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Mayeppoh",
+    "section": "Mayeppoh",
+    "locality": "Robonthong"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Poli",
+    "section": "Lower Polie",
+    "locality": "Magbokeh"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Sambaya",
+    "section": "Dayie",
+    "locality": "Heremomkono"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Sambaya",
+    "section": "Wolima",
+    "locality": "Wolima"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Simiria",
+    "section": "Mabonto",
+    "locality": "Maforeka"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Simiria",
+    "section": "Makelfa",
+    "locality": "Nerekoro"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Simiria",
+    "section": "Makelfa",
+    "locality": "Sokoya"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Tane",
+    "section": "Makrugbeh",
+    "locality": "Magbalma"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Yoni Mabanta",
+    "section": "Malanchor",
+    "locality": "Tonkolili District"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Yoni Mamaila",
+    "section": "Gaindema",
+    "locality": "Makaima"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Yoni Mamaila",
+    "section": "Gaindema",
+    "locality": "Malempoh"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Yoni Mamaila",
+    "section": "Gaindema",
+    "locality": "Mamuntha"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Yoni Mamaila",
+    "section": "Gaindema",
+    "locality": "Maserie"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Yoni Mamaila",
+    "section": "Gaindema",
+    "locality": "Masiray"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Yoni Mamaila",
+    "section": "Gaindema",
+    "locality": "Masper"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Yoni Mamaila",
+    "section": "Gaindema",
+    "locality": "Romankneh"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Yoni Mamaila",
+    "section": "Macrogba",
+    "locality": "Masonkay,"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Yoni Mamaila",
+    "section": "Masengbe",
+    "locality": "Tonkolili District"
+  },
+  {
+    "region": "NORTH",
+    "district": "TONKOLILI",
+    "chiefdom": "Yoni Mamaila",
+    "section": "Yoni",
+    "locality": "Yoni,"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KAMBIA",
+    "chiefdom": "Gbinle",
+    "section": "Tawuya",
+    "locality": "Tawuya"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KAMBIA",
+    "chiefdom": "Magbema",
+    "section": "Rokupr",
+    "locality": "Kambia District"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KAMBIA",
+    "chiefdom": "Magbema",
+    "section": "Rokupr",
+    "locality": "Rotuk"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KAMBIA",
+    "chiefdom": "Mambolo",
+    "section": "Mambolo",
+    "locality": "Kambia District"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KAMBIA",
+    "chiefdom": "Masungbala",
+    "section": "Nonko",
+    "locality": "Kambia District"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KAMBIA",
+    "chiefdom": "Muna Thalla",
+    "section": "Mapolon",
+    "locality": "Kambia District"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KAMBIA",
+    "chiefdom": "Samu",
+    "section": "Kychom",
+    "locality": "Balensera"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KAMBIA",
+    "chiefdom": "Tonko Limba",
+    "section": "Mamankoh",
+    "locality": "Kukuna"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Buya",
+    "section": "Mabureh Buya",
+    "locality": "Mabureh"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Buya",
+    "section": "Magbengbe",
+    "locality": "Port Loko District"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Buya",
+    "section": "Magbengbeh",
+    "locality": "Makainkoi"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Buya",
+    "section": "Magbengbeh",
+    "locality": "Robis-Monkoni"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Buya",
+    "section": "Magbengbeh",
+    "locality": "Taiama"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Libeisaygahun/Gbombahun",
+    "section": "Makaiba",
+    "locality": "Makaiba"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Safroko",
+    "section": "Gbaray Bana",
+    "locality": "Gbaray Bana"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Safroko",
+    "section": "Maron",
+    "locality": "Maron"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sanda Loko",
+    "section": "Banku",
+    "locality": "Robet"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sanda Loko",
+    "section": "Gbonko",
+    "locality": "Gbonko"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sanda Loko",
+    "section": "Kontia",
+    "locality": "Kontia"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sanda Loko",
+    "section": "Madina",
+    "locality": "Madina"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sanda Loko",
+    "section": "Makapa",
+    "locality": "Rokupr"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sanda Loko",
+    "section": "Makapu",
+    "locality": "Amina"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sanda Loko",
+    "section": "Timbo",
+    "locality": "Markoba Yelimi"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sanda Magbolontor",
+    "section": "Gbogbodo",
+    "locality": "Kafalla"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sanda Magbolontor",
+    "section": "Kantia",
+    "locality": "Kantia"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sanda Magbolontor",
+    "section": "Layamantmetank",
+    "locality": "Gbaneh Limba,"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sella Limba",
+    "section": "Kamakuyor",
+    "locality": "Kamakuyor"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sella Limba",
+    "section": "Kamakwie",
+    "locality": "Kamakwie Town"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sella Limba",
+    "section": "Katherie",
+    "locality": "Kamakwie"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sella Limba",
+    "section": "Kayimbor",
+    "locality": "Kamankay"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "KARENE",
+    "chiefdom": "Sella Limba",
+    "section": "Kayimbor",
+    "locality": "Kathantha Yimbor/Kamasa‚Ä¶"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Bakeh Loko",
+    "section": "Pothocase",
+    "locality": "Rogbet"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Bakeh Loko",
+    "section": "Sanda",
+    "locality": "Sanda"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Bakeh Loko",
+    "section": "Sendugu",
+    "locality": "Sendugu"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Kaffu Bullom",
+    "section": "Lungi",
+    "locality": "Kolia"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Kaffu Bullom",
+    "section": "Lungi",
+    "locality": "Lungi town"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Kaffu Bullom",
+    "section": "Matuku",
+    "locality": "Rotifunk"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Kamasondo",
+    "section": "Katonga",
+    "locality": "Port Loko District"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Kamasondo",
+    "section": "Konta",
+    "locality": "Konta"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Kamasondo",
+    "section": "Konta",
+    "locality": "Makanko"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Koya",
+    "section": "Makombay",
+    "locality": "Masiaka"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Lokomasama",
+    "section": "Matheng",
+    "locality": "Matheng"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Maforki",
+    "section": "Gberray",
+    "locality": "Magbill"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Maforki",
+    "section": "Gbonko",
+    "locality": "Gbonko"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Maforki",
+    "section": "Makorobo",
+    "locality": "Kasanko"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Maforki",
+    "section": "Mathera",
+    "locality": "Konta"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Maforki",
+    "section": "Mopole",
+    "locality": "Masama"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Makonteh",
+    "section": "Mamanki",
+    "locality": "Mamanki"
+  },
+  {
+    "region": "NORTH WEST",
+    "district": "PORT LOKO",
+    "chiefdom": "Masimera",
+    "section": "Matuku",
+    "locality": "Konta"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BO",
+    "chiefdom": "Bagbo",
+    "section": "Jimmi",
+    "locality": "Bo District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BO",
+    "chiefdom": "Bagbwe (Bagbe)",
+    "section": "Niawa",
+    "locality": "Njala Kendema"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BO",
+    "chiefdom": "Bo Town",
+    "section": "W-Kandeh Town-Korwama",
+    "locality": "Bo City"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BO",
+    "chiefdom": "Bongor",
+    "section": "Nekpondo",
+    "locality": "Bo District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BO",
+    "chiefdom": "Kakua",
+    "section": "Kpandobu",
+    "locality": "Bo District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BO",
+    "chiefdom": "Kakua",
+    "section": "Sewa",
+    "locality": "Bo District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BO",
+    "chiefdom": "Komboya",
+    "section": "Keisua",
+    "locality": "Bo District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BO",
+    "chiefdom": "Komboya",
+    "section": "Keisua",
+    "locality": "Kundoma"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BO",
+    "chiefdom": "Valunia",
+    "section": "Deilenga",
+    "locality": "Bo District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BONTHE",
+    "chiefdom": "Bonthe Urban",
+    "section": "Bonthe Town",
+    "locality": "Bonthe Municipality"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BONTHE",
+    "chiefdom": "Bonthe Urban",
+    "section": "Bonthe Town",
+    "locality": "Bonthe Town"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BONTHE",
+    "chiefdom": "Bonthe Urban",
+    "section": "Bonthe Town",
+    "locality": "Council"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BONTHE",
+    "chiefdom": "Bonthe Urban",
+    "section": "Bonthe Town",
+    "locality": "St Joseph Sec School"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BONTHE",
+    "chiefdom": "Bum",
+    "section": "Gbondubum",
+    "locality": "Nupi"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BONTHE",
+    "chiefdom": "Imperri",
+    "section": "Babum",
+    "locality": "Gbangbaia"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BONTHE",
+    "chiefdom": "Imperri",
+    "section": "Bapus",
+    "locality": "Taninahun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BONTHE",
+    "chiefdom": "Jong",
+    "section": "Bayengbe",
+    "locality": "Mattru Town"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BONTHE",
+    "chiefdom": "Sittia",
+    "section": "Gonoh",
+    "locality": "Jaluahun,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "BONTHE",
+    "chiefdom": "Sittia",
+    "section": "Kamai",
+    "locality": "Kamai,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "MOYAMBA",
+    "chiefdom": "Dasse",
+    "section": "Bambuibu Tommy",
+    "locality": "Gogoima"
+  },
+  {
+    "region": "SOUTH",
+    "district": "MOYAMBA",
+    "chiefdom": "Kagboro",
+    "section": "Ngiehun",
+    "locality": "Mojana"
+  },
+  {
+    "region": "SOUTH",
+    "district": "MOYAMBA",
+    "chiefdom": "Kongbora",
+    "section": "Mongere",
+    "locality": "Moyamba District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "MOYAMBA",
+    "chiefdom": "Kori",
+    "section": "Zone 6",
+    "locality": "Kpawama"
+  },
+  {
+    "region": "SOUTH",
+    "district": "MOYAMBA",
+    "chiefdom": "Kowa",
+    "section": "Mosumana",
+    "locality": "Buwahun,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "MOYAMBA",
+    "chiefdom": "Ribbi",
+    "section": "Masonka",
+    "locality": "Konta"
+  },
+  {
+    "region": "SOUTH",
+    "district": "MOYAMBA",
+    "chiefdom": "Upper Banta",
+    "section": "Bei-Kelleh",
+    "locality": "Jenenga,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Dakona",
+    "locality": "Buma II,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Fallay",
+    "locality": "Gieyema"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Fallay",
+    "locality": "Niayama"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Fallay",
+    "locality": "Tambeyama"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Jakema II",
+    "locality": "Behah"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Jougba",
+    "locality": "Naiaguahun,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Jougba",
+    "locality": "Vaama"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Laimba",
+    "locality": "Konia,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Sonjour I",
+    "locality": "Jaluahun Old,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Sonjour II",
+    "locality": "Pujehun District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Tetima",
+    "locality": "Boma"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Tetima",
+    "locality": "Ngolala,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Barri",
+    "section": "Tetima",
+    "locality": "Saahun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Bondor",
+    "locality": "Blama"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Bondor",
+    "locality": "Bo Perri"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Bondor",
+    "locality": "Gajubaoma,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Bondor",
+    "locality": "Vaama,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Dabeni",
+    "locality": "Baoma Town"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Dabeni",
+    "locality": "Swawo"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Jakema I",
+    "locality": "Juhun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Jakema I",
+    "locality": "Pujehun District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Joya",
+    "locality": "Falaba II,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Joya",
+    "locality": "Foindu"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Joya",
+    "locality": "Kowama,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Kemokai",
+    "locality": "Bomi"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Galliness",
+    "section": "Korwa",
+    "locality": "Gbanahun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Kabonde",
+    "section": "Kabonde",
+    "locality": "Pujehun District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Kpaka",
+    "section": "Jassende Kpeima",
+    "locality": "Gbandi,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Kpaka",
+    "section": "Nyango - Njeigbla",
+    "locality": "Koilawa"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Kpaka",
+    "section": "Parvu",
+    "locality": "Kpassor"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Makpele",
+    "section": "Samagbe",
+    "locality": "Nyandehun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Makpele",
+    "section": "Seitua",
+    "locality": "Pujehun District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Makpele",
+    "section": "Selimeh",
+    "locality": "Pujehun District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Kahaimoh",
+    "locality": "Fayama"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Kahaimoh",
+    "locality": "Mano Bonjema,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Kahaimoh",
+    "locality": "Njama"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Kakpanda",
+    "locality": "Barbarwulo"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Kakpanda",
+    "locality": "Taninahun,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Korwa",
+    "locality": "Sahun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Lower Pemba",
+    "locality": "Gandohun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Seijeila",
+    "locality": "Hinai"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Seijeila",
+    "locality": "Pujehun District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Taukunor",
+    "locality": "Fakaba"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Taukunor",
+    "locality": "Jelahun,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Taukunor",
+    "locality": "Kpombu"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Taukunor",
+    "locality": "Potain,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Upper Pemba",
+    "locality": "Jao"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Malen",
+    "section": "Upper Pemba",
+    "locality": "Kpanguma,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Mono Sakrim",
+    "section": "Makpondo",
+    "locality": "Pujehun District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Mono Sakrim",
+    "section": "Massanda Majagbe",
+    "locality": "Pujehun District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Panga",
+    "section": "Panga",
+    "locality": "Gofor A"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Panga",
+    "section": "Panga",
+    "locality": "Pujehun District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Panga krim",
+    "section": "Fassei",
+    "locality": "Vaama,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Panga krim",
+    "section": "Samba",
+    "locality": "Nyangahun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Pejeh (Futa Peje)",
+    "section": "Buma",
+    "locality": "Buma"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Pejeh (Futa Peje)",
+    "section": "Pejeh East",
+    "locality": "Koiva"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Pejeh (Futa Peje)",
+    "section": "Pejeh East",
+    "locality": "Njandama,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Dakona",
+    "locality": "Fonikoh"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Dakona",
+    "locality": "Gormian-Sembehun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Dakona",
+    "locality": "Potehun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Gendema I",
+    "locality": "Kakayama,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Gendema I",
+    "locality": "Kpetema,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Gendema I",
+    "locality": "Lembema,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Gendema I",
+    "locality": "Semabu, Sola"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Gendema II",
+    "locality": "Betesu,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Jakema II",
+    "locality": "Baah,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Jakema II",
+    "locality": "Sarma"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Kortugbu",
+    "locality": "Gendema Wulo,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Kortugbu",
+    "locality": "Kpaku"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Kortugbu",
+    "locality": "Makoma"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Kortugbu",
+    "locality": "Nyandehun I,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Mewah",
+    "locality": "Bangoma,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Mewah",
+    "locality": "Blama Massaquoi"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Mewah",
+    "locality": "Konabu,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Pelegbulor",
+    "locality": "Konia"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Pelegbulor",
+    "locality": "Senshun,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Perri",
+    "section": "Pelegbulor",
+    "locality": "Tongay"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Kemokai",
+    "locality": "Bombohun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Kemokai",
+    "locality": "Malema"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Kengo",
+    "locality": "Futa Golawoma"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Mano - River",
+    "locality": "Baraka"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Mano - River",
+    "locality": "Koijei"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Mano - River",
+    "locality": "Mano-Kpende"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Massaquoi I",
+    "locality": "Gondama,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Massaquoi I",
+    "locality": "Mano,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Massaquoi I",
+    "locality": "Sumbuya Luo,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Massaquoi II",
+    "locality": "Jogbodoma,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Massaquoi II",
+    "locality": "Kpakala,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Massaquoi II",
+    "locality": "Misila,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Massaquoi II",
+    "locality": "Sulima"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Moiwebu",
+    "locality": "Bopon,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Moiwebu",
+    "locality": "Jembe Moiwebu,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Moiwebu",
+    "locality": "Tindor"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Zoker I",
+    "locality": "Gondama,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Zoker I",
+    "locality": "Gonohun,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Zoker I",
+    "locality": "Macca"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Zoker I",
+    "locality": "Madina,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Soro Gbema",
+    "section": "Zombo",
+    "locality": "Mendekiema"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Sowa",
+    "section": "Kangabai",
+    "locality": "Geoma Jayahun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Sowa",
+    "section": "Sabba I",
+    "locality": "Komendi,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Sowa",
+    "section": "Sabba II",
+    "locality": "Mani"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Sowa",
+    "section": "Sabba II",
+    "locality": "Vawahun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Sowa",
+    "section": "Upper Geoma",
+    "locality": "Pujehun District"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Bapawa",
+    "locality": "Forbu,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Bekowa",
+    "locality": "Funkia"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Bekowa",
+    "locality": "Mina,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Deyombo",
+    "locality": "Dia,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Kemo-wa",
+    "locality": "Motanga"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Kpukumu",
+    "locality": "Matakang,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Seiwoh",
+    "locality": "Blama"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Seiwoh",
+    "locality": "Burma"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Seiwoh",
+    "locality": "Dokabu,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Seiwoh",
+    "locality": "Laah,"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Seiwoh",
+    "locality": "Messima"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Seiwoh",
+    "locality": "Topanda"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Seiwoh",
+    "locality": "Vaawahun"
+  },
+  {
+    "region": "SOUTH",
+    "district": "PUJEHUN",
+    "chiefdom": "Yakemu Kpukumu",
+    "section": "Sowonde",
+    "locality": "Bo Old,"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Goderich",
+    "section": "Goderich",
+    "locality": "Milton Margai"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Jui Junction",
+    "section": "Jui Junction",
+    "locality": "Jui Junction"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Koya Rural",
+    "section": "Madonkeh",
+    "locality": "Kola Tree,"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Koya Rural",
+    "section": "Newton",
+    "locality": "Western Rural District"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Mountain Rural",
+    "section": "Gloucester",
+    "locality": "Western Rural District"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Mountain Rural",
+    "section": "Leicester",
+    "locality": "Leicester"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Peninsula",
+    "section": "Peninsula",
+    "locality": "Mambo"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Waterloo Rural",
+    "section": "Jui-Grafton",
+    "locality": "Kossoh Town"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Waterloo Rural",
+    "section": "Waterloo Benguema",
+    "locality": "Western Rural District"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Waterloo Rural",
+    "section": "Waterloo Lumpa",
+    "locality": "Lumpa"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Waterloo Rural",
+    "section": "Waterloo Village A",
+    "locality": "Kissy Town"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Waterloo Rural",
+    "section": "Waterlooo Campbell Town",
+    "locality": "Lumpa"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN RURAL",
+    "chiefdom": "Waterloo Rural",
+    "section": "Waterlooo Campbell Town",
+    "locality": "New London"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN URBAN",
+    "chiefdom": "West II",
+    "section": "CongoTown",
+    "locality": "Freetown City"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN URBAN",
+    "chiefdom": "West II",
+    "section": "George Brook (Dwor",
+    "locality": "George Brook (Dworzark- Freetown)"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN URBAN",
+    "chiefdom": "West III",
+    "section": "Juba/Kaningo",
+    "locality": "Juba/Kaningo (Freetown)"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN URBAN",
+    "chiefdom": "West III",
+    "section": "Lumley",
+    "locality": "Freetown City"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN URBAN",
+    "chiefdom": "West III",
+    "section": "Pipeline/Wilkinson",
+    "locality": "Freetown City"
+  },
+  {
+    "region": "WEST",
+    "district": "WESTERN URBAN",
+    "chiefdom": "West III",
+    "section": "Wilberforce",
+    "locality": "Freetown City"
+  }
+]
