@@ -14,8 +14,10 @@ class SendStateChangeNotification implements ShouldQueue
 {
     /** @var list<GrievanceState> */
     private const SILENT = [
+        // Resolved is covered by FeedbackRequested -> SendFeedbackInvitation,
+        // which delivers the rating/feedback link; skipping here avoids a
+        // double email. Closed gets the generic complainant status update.
         GrievanceState::Resolved,
-        GrievanceState::Closed,
         GrievanceState::Trashed,
     ];
 

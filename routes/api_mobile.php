@@ -51,9 +51,14 @@ Route::middleware('auth:sanctum')->group(function (): void {
     Route::post('grievances/{id}/attachments',  [MobileGrievanceController::class, 'uploadAttachment'])->whereNumber('id');
     Route::post('grievances/{id}/review',       [MobileGrievanceController::class, 'review'])->whereNumber('id');
     Route::post('grievances/{id}/assign',       [MobileGrievanceController::class, 'assign'])->whereNumber('id');
+    Route::post('grievances/{id}/categorize',   [MobileGrievanceController::class, 'categorize'])->whereNumber('id');
+    Route::post('grievances/{id}/classify',     [MobileGrievanceController::class, 'classify'])->whereNumber('id');
     Route::post('grievances/{id}/closure/begin',    [MobileGrievanceController::class, 'beginClosure'])->whereNumber('id');
     Route::post('grievances/{id}/closure/close',    [MobileGrievanceController::class, 'close'])->whereNumber('id');
     Route::post('grievances/{id}/closure/escalate', [MobileGrievanceController::class, 'escalate'])->whereNumber('id');
+
+    Route::get('reference/officers',            [MobileReferenceController::class, 'officers']);
+    Route::get('reference/org-classifications', [MobileReferenceController::class, 'orgClassifications']);
 
     Route::post('push/register',   [MobilePushController::class, 'register']);
     Route::post('push/unregister', [MobilePushController::class, 'unregister']);

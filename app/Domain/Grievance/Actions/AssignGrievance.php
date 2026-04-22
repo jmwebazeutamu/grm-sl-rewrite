@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Domain\Grievance\Actions;
 
 use App\Domain\Grievance\Enums\ActionType;
+use App\Domain\Grievance\Events\GrievanceOfficerAssigned;
 use App\Domain\Grievance\Models\Grievance;
 use App\Domain\Identity\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -19,15 +20,16 @@ class AssignGrievance
 {
     public function __invoke(Grievance $grievance, ?User $officer, User $actor): Grievance
     {
-        return DB::transaction(function () use ($grievance, $officer, $actor): Grievance {
-            $previous = $grievance->assigned_officer_id;
+        $previousOfficerId = $grievance->assigned_officer_id;
+
+        $result = DB::transaction(function () use ($grievance, $officer, $actor, $previousOfficerId): Grievance {
             $grievance->update(['assigned_officer_id' => $officer?->id]);
 
             $body = $officer === null
-                ? "Unassigned (was officer #{$previous})."
-                : ($previous === null
+                ? "Unassigned (was officer #{$previousOfficerId})."
+                : ($previousOfficerId === null
                     ? "Assigned to {$officer->name}."
-                    : "Reassigned to {$officer->name} (was officer #{$previous}).");
+                    : "Reassigned to {$officer->name} (was officer #{$previousOfficerId}).");
 
             // created_by_id / updated_by_id are stamped by RecordsAuthorship
             // trait on save; no need to pass them here.
@@ -39,5 +41,13 @@ class AssignGrievance
 
             return $grievance->fresh(['assignedOfficer']);
         });
+
+        // Dispatched on (re)assignment only — unassigning shouldn't fire a
+        // "you've been assigned" email. Listeners notify the officer + org admins.
+        if ($officer !== null) {
+            GrievanceOfficerAssigned::dispatch($result, $officer, $actor, $previousOfficerId);
+        }
+
+        return $result;
     }
 }

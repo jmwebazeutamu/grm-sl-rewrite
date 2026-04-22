@@ -8,10 +8,13 @@ use App\Domain\Audit\Listeners\LogGrievanceStateChanged;
 use App\Domain\Audit\Listeners\LogGrievanceSubmitted;
 use App\Domain\Audit\Listeners\LogUserRoleAssigned;
 use App\Domain\Grievance\Events\FeedbackRequested;
+use App\Domain\Grievance\Events\GrievanceOfficerAssigned;
 use App\Domain\Grievance\Events\GrievanceReopened;
 use App\Domain\Grievance\Events\GrievanceStateChanged;
 use App\Domain\Grievance\Events\GrievanceSubmitted;
 use App\Domain\Grievance\Listeners\NotifyOrgOnReopen;
+use App\Domain\Grievance\Listeners\NotifyStaffOnAssignment;
+use App\Domain\Grievance\Listeners\NotifyStaffOnStateChange;
 use App\Domain\Grievance\Listeners\SendFeedbackInvitation;
 use App\Domain\Grievance\Listeners\SendGrievanceReceivedNotification;
 use App\Domain\Grievance\Listeners\SendStateChangeNotification;
@@ -36,6 +39,7 @@ class EventServiceProvider extends ServiceProvider
             InvalidateReportCache::class,
             InvalidateQuarterlyCache::class,
             SendStateChangeNotification::class,
+            NotifyStaffOnStateChange::class,
             LogGrievanceStateChanged::class,
         ],
         FeedbackRequested::class => [
@@ -43,6 +47,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         GrievanceReopened::class => [
             NotifyOrgOnReopen::class,
+        ],
+        GrievanceOfficerAssigned::class => [
+            NotifyStaffOnAssignment::class,
         ],
         UserRoleAssigned::class => [
             LogUserRoleAssigned::class,

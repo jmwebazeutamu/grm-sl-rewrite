@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domain\Grievance\Http\Controllers\Mobile;
 
+use App\Domain\Grievance\Models\OrgGrievanceType;
+use App\Domain\Identity\Models\User;
 use App\Domain\Locality\Models\Chiefdom;
 use App\Domain\Locality\Models\District;
 use App\Domain\Locality\Models\Locality;
@@ -96,6 +98,35 @@ class MobileReferenceController extends Controller
                 ->when($orgId, fn ($q, $id) => $q->where('organization_id', $id))
                 ->orderBy('name')
                 ->get(['id', 'name', 'acronym', 'organization_id']);
+        });
+    }
+
+    /** AUTH — staff in a given organisation (candidates for assignment). */
+    public function officers(Request $request): JsonResponse
+    {
+        $orgId = $request->integer('organisation_id') ?: null;
+
+        return $this->cached("officers:{$orgId}", function () use ($orgId) {
+            return User::when($orgId, fn ($q, $id) => $q->where('organization_id', $id))
+                ->orderBy('name')
+                ->get(['id', 'name']);
+        });
+    }
+
+    /** AUTH — an org's internal sub-classifications (label renamed to `name` for the client SelectSheet). */
+    public function orgClassifications(Request $request): JsonResponse
+    {
+        $orgId = $request->integer('organisation_id') ?: null;
+        if ($orgId === null) {
+            return response()->json(['data' => []]);
+        }
+
+        return $this->cached("org_classifications:{$orgId}", function () use ($orgId) {
+            return OrgGrievanceType::where('organization_id', $orgId)
+                ->where('active', true)
+                ->orderBy('label')
+                ->get(['id', 'label'])
+                ->map(fn ($t) => ['id' => $t->id, 'name' => $t->label]);
         });
     }
 

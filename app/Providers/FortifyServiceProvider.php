@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\Actions\Fortify\ResetUserPassword;
 use App\Domain\Identity\Models\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
@@ -22,13 +23,19 @@ class FortifyServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        // Password-reset action. Fortify ships contracts only; the concrete
+        // implementation is project-specific (enforces our password rules
+        // against our User model).
+        Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+
         // Authenticate by `username` against the legacy `person` table.
         Fortify::authenticateUsing(function (Request $request): ?User {
             $user = User::where('username', $request->input('username'))->first();
 
             if ($user && Hash::check($request->input('password'), $user->password)) {
-                // Block deactivated users at the login gate.
-                if ($user->is_active === false) {
+                // Block deactivated users at the login gate. Truthy check so
+                // null / 0 / false all fail closed — matches CheckUserActive.
+                if (! $user->is_active) {
                     session()->flash('error', 'Your account has been deactivated. Contact your administrator.');
 
                     return null;

@@ -82,6 +82,7 @@ class GrievanceStateChangedNotification extends Notification implements ShouldQu
             GrievanceState::InProgress => 'An officer is now working on your case.',
             GrievanceState::Rejected => 'After review, we were not able to accept this case. If you believe this is an error, please submit again with additional detail.',
             GrievanceState::Escalated => 'We are re-working your case based on the feedback you provided.',
+            GrievanceState::Closed => 'Your case has been closed. Thank you for reporting it to us.',
             default => 'You will receive further updates as the case progresses.',
         };
     }
@@ -93,6 +94,7 @@ class GrievanceStateChangedNotification extends Notification implements ShouldQu
             GrievanceState::InProgress => 'An officer is working on it.',
             GrievanceState::Rejected => 'Reason on the case page.',
             GrievanceState::Escalated => 'We are re-working it.',
+            GrievanceState::Closed => 'This case is now closed.',
             default => '',
         };
     }

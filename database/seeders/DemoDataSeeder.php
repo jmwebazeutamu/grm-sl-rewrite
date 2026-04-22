@@ -12,11 +12,7 @@ use App\Domain\Grievance\Models\GrievanceAction;
 use App\Domain\Grievance\Models\GrievanceStatusHistory;
 use App\Domain\Grievance\Models\Suspect;
 use App\Domain\Identity\Models\User;
-use App\Domain\Locality\Models\Chiefdom;
-use App\Domain\Locality\Models\District;
 use App\Domain\Locality\Models\Locality;
-use App\Domain\Locality\Models\Region;
-use App\Domain\Locality\Models\Section;
 use App\Domain\Organization\Models\Organization;
 use App\Domain\Reference\Models\GrievanceType;
 use App\Domain\Reference\Models\HowReported;
@@ -25,9 +21,13 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Seeds a browsable demo: Sierra Leone geography (Region → District →
- * Chiefdom → Section → Locality), reference lookups, organizations, and
- * ~20 sample grievances in mixed states.
+ * Seeds reference lookups, organizations, demo users, and ~20 sample
+ * grievances in mixed states, attached to localities from the canonical
+ * geography (seeded separately by GeographySeeder from geography.json).
+ *
+ * Does NOT create its own geography — it used to, with a proper-case set
+ * that collided with the canonical all-caps one and created duplicates.
+ * Run GeographySeeder first.
  *
  * Idempotent-ish: uses firstOrCreate for all reference data. Grievances
  * are only created when none exist, so re-running won't duplicate them.
@@ -36,8 +36,14 @@ class DemoDataSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->command?->info('Seeding Sierra Leone geography…');
-        [$regions, $districts, $chiefdoms, $sections, $localities] = $this->seedGeography();
+        if (Locality::count() === 0) {
+            $this->command?->error(
+                "Canonical geography is empty. Run GeographySeeder first:\n"
+                ."  php artisan db:seed --class='Database\\Seeders\\GeographySeeder'"
+            );
+
+            return;
+        }
 
         $this->command?->info('Seeding reference lookups…');
         [$types, $howReported, $priorities] = $this->seedLookups();
@@ -58,7 +64,7 @@ class DemoDataSeeder extends Seeder
         }
 
         $this->command?->info('Seeding sample grievances…');
-        $this->seedGrievances($regions, $districts, $chiefdoms, $sections, $localities, $types, $howReported, $priorities, $orgs);
+        $this->seedGrievances($types, $howReported, $priorities, $orgs);
     }
 
     /**
@@ -71,39 +77,29 @@ class DemoDataSeeder extends Seeder
     private function seedDemoUsers(array $orgs): void
     {
         $personas = [
-            // ACC — one reviewer + one data operator.
+            // ACC — reviewer + data operator.
             ['username' => 'acc_reviewer', 'name' => 'ACC Reviewer', 'email' => 'acc@grm-sl.local',
              'org' => 'Anti-Corruption Commission', 'role' => 'acc-reviewer'],
             ['username' => 'grm_operator', 'name' => 'GRM Data Operator', 'email' => 'operator@grm-sl.local',
              'org' => 'Anti-Corruption Commission', 'role' => 'grm-data-operator'],
 
-            // MoHS — one org-admin + one GRM Officer + two regular officers.
-            ['username' => 'mohs_admin',   'name' => 'MoHS Admin',          'email' => 'mohs-admin@grm-sl.local',
-             'org' => 'Ministry of Health', 'role' => 'org-admin'],
-            ['username' => 'mohs_grm',     'name' => 'Dr. Aminata Kamara', 'email' => 'akamara.mohs@grm-sl.local',
-             'org' => 'Ministry of Health', 'role' => 'grm-officer'],
-            ['username' => 'mohs_officer', 'name' => 'Mohamed Sesay',     'email' => 'msesay.mohs@grm-sl.local',
-             'org' => 'Ministry of Health', 'role' => 'organization-officer'],
-            ['username' => 'mohs_jalloh',  'name' => 'Zainab Jalloh',     'email' => 'zjalloh.mohs@grm-sl.local',
-             'org' => 'Ministry of Health', 'role' => 'organization-officer'],
-
-            // MBSSE — one GRM Officer + one officer.
-            ['username' => 'mbsse_grm',     'name' => 'Fatmata Bangura', 'email' => 'fbangura.mbsse@grm-sl.local',
-             'org' => 'Ministry of Education', 'role' => 'grm-officer'],
-            ['username' => 'mbsse_officer', 'name' => 'Ibrahim Turay',   'email' => 'ituray.mbsse@grm-sl.local',
-             'org' => 'Ministry of Education', 'role' => 'organization-officer'],
-
-            // FCC — one GRM Officer + two officers.
-            ['username' => 'fcc_grm',      'name' => 'Alusine Kanu',     'email' => 'akanu.fcc@grm-sl.local',
+            // FCC — org-admin + GRM officer + two organization-officers.
+            ['username' => 'fcc_admin',    'name' => 'FCC Admin',       'email' => 'fcc-admin@grm-sl.local',
+             'org' => 'Local Council - Freetown', 'role' => 'org-admin'],
+            ['username' => 'fcc_grm',      'name' => 'Alusine Kanu',    'email' => 'akanu.fcc@grm-sl.local',
              'org' => 'Local Council - Freetown', 'role' => 'grm-officer'],
-            ['username' => 'fcc_officer',  'name' => 'Mariama Koroma',   'email' => 'mkoroma.fcc@grm-sl.local',
+            ['username' => 'fcc_officer',  'name' => 'Mariama Koroma',  'email' => 'mkoroma.fcc@grm-sl.local',
              'org' => 'Local Council - Freetown', 'role' => 'organization-officer'],
-            ['username' => 'fcc_fofana',   'name' => 'Sheku Fofana',     'email' => 'sfofana.fcc@grm-sl.local',
+            ['username' => 'fcc_fofana',   'name' => 'Sheku Fofana',    'email' => 'sfofana.fcc@grm-sl.local',
              'org' => 'Local Council - Freetown', 'role' => 'organization-officer'],
 
-            // Ministry of Water Resources — one GRM Officer.
-            ['username' => 'mwr_grm',      'name' => 'Isata Mansaray',   'email' => 'imansaray.mwr@grm-sl.local',
-             'org' => 'Ministry of Water Resources', 'role' => 'grm-officer'],
+            // NaCSA — org-admin + GRM officer + officer.
+            ['username' => 'nacsa_admin',  'name' => 'NaCSA Admin',     'email' => 'nacsa-admin@grm-sl.local',
+             'org' => 'National Commission for Social Action', 'role' => 'org-admin'],
+            ['username' => 'nacsa_grm',    'name' => 'Isata Mansaray',  'email' => 'imansaray.nacsa@grm-sl.local',
+             'org' => 'National Commission for Social Action', 'role' => 'grm-officer'],
+            ['username' => 'nacsa_officer','name' => 'Sorie Bah',       'email' => 'sbah.nacsa@grm-sl.local',
+             'org' => 'National Commission for Social Action', 'role' => 'organization-officer'],
         ];
 
         foreach ($personas as $p) {
@@ -123,9 +119,22 @@ class DemoDataSeeder extends Seeder
     private function seedOrgGrievanceTypes(array $orgs): void
     {
         $typesByOrg = [
-            'Ministry of Health' => ['Payments', 'Inclusion/Exclusion Errors', 'SIM Card Issues', 'Service Quality'],
-            'Anti-Corruption Commission' => ['Bribery', 'Misappropriation', 'Conflict of Interest'],
-            'Local Council - Freetown' => ['Infrastructure Complaint', 'Market Access', 'Land Dispute Resolution'],
+            'Anti-Corruption Commission' => [
+                'Corruption / Bribery',
+                'GBV',
+            ],
+            'Local Council - Freetown' => [
+                'Payments',
+            ],
+            'National Commission for Social Action' => [
+                'Payments',
+                'SIM Issues',
+                'Household Selection',
+                'Other',
+                'MISSING DATA',
+                'Administrative',
+                'Identification',
+            ],
         ];
 
         foreach ($typesByOrg as $orgName => $labels) {
@@ -143,126 +152,13 @@ class DemoDataSeeder extends Seeder
     }
 
     /**
-     * @return array{
-     *   0: array<string, Region>,
-     *   1: array<string, District>,
-     *   2: array<string, Chiefdom>,
-     *   3: array<string, Section>,
-     *   4: array<string, Locality>,
-     * }
-     */
-    private function seedGeography(): array
-    {
-        // Five regions + ~10 districts + a smaller representative set of
-        // chiefdoms/sections/localities. Real SL has ~190 chiefdoms; this is
-        // enough breadth to demo filtering without overwhelming the UI.
-        $structure = [
-            'Western Area' => [
-                'Western Area Urban' => [
-                    'Central'    => ['Central I'    => ['Tower Hill', 'Cotton Tree Area', 'Susan\'s Bay']],
-                    'East'       => ['East I'       => ['Kissy', 'Calaba Town', 'Wellington']],
-                    'West'       => ['West I'       => ['Aberdeen', 'Lumley', 'Goderich']],
-                ],
-                'Western Area Rural' => [
-                    'Koya Rural'     => ['Koya Central'     => ['Waterloo', 'Songo', 'Tombo']],
-                    'York Rural'     => ['York Central'     => ['York Village', 'Hamilton', 'Sussex']],
-                ],
-            ],
-            'Northern' => [
-                'Bombali' => [
-                    'Makari Gbanti' => ['Makeni Town' => ['Teko', 'Rogbaneh', 'Panlap']],
-                    'Gbendembu Ngowahun' => ['Gbendembu' => ['Gbendembu', 'Mateboi']],
-                ],
-                'Tonkolili' => [
-                    'Kholifa Rowalla' => ['Magburaka Central' => ['Magburaka', 'Yele', 'Mabonto']],
-                ],
-            ],
-            'Southern' => [
-                'Bo' => [
-                    'Kakua' => ['Bo Central' => ['Bo Town', 'Kakua Junction', 'Njala']],
-                    'Selenga' => ['Selenga Central' => ['Selenga', 'Sembehun']],
-                ],
-                'Pujehun' => [
-                    'Soro Gbema' => ['Soro Gbema Central' => ['Pujehun', 'Sulima']],
-                ],
-            ],
-            'Eastern' => [
-                'Kenema' => [
-                    'Nongowa' => ['Kenema Central' => ['Kenema Town', 'Blama', 'Hangha']],
-                    'Lower Bambara' => ['Lower Bambara Central' => ['Panguma', 'Boajibu']],
-                ],
-                'Kailahun' => [
-                    'Luawa' => ['Luawa Central' => ['Kailahun', 'Daru', 'Segbwema']],
-                ],
-            ],
-            'North-Western' => [
-                'Port Loko' => [
-                    'BKM' => ['BKM Central' => ['Port Loko Town', 'Lunsar', 'Masiaka']],
-                ],
-                'Kambia' => [
-                    'Magbema' => ['Magbema Central' => ['Kambia Town', 'Rokupr']],
-                ],
-            ],
-        ];
-
-        $regions = $districts = $chiefdoms = $sections = $localities = [];
-
-        // Ensure we have a country row because region.country_id is required.
-        $countryId = DB::table('country')->where('name', 'Sierra Leone')->value('id')
-            ?? DB::table('country')->insertGetId([
-                'name' => 'Sierra Leone',
-                'iso_code' => 'SLE',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-
-        foreach ($structure as $regionName => $districtMap) {
-            $region = Region::firstOrCreate(['name' => $regionName], ['country_id' => $countryId]);
-            $regions[$regionName] = $region;
-
-            foreach ($districtMap as $districtName => $chiefdomMap) {
-                $district = District::firstOrCreate(
-                    ['name' => $districtName],
-                    ['region_id' => $region->id],
-                );
-                $districts[$districtName] = $district;
-
-                foreach ($chiefdomMap as $chiefdomName => $sectionMap) {
-                    $chiefdom = Chiefdom::firstOrCreate(
-                        ['name' => $chiefdomName, 'district_id' => $district->id],
-                    );
-                    $chiefdoms[$chiefdomName] = $chiefdom;
-
-                    foreach ($sectionMap as $sectionName => $localityList) {
-                        $section = Section::firstOrCreate(
-                            ['name' => $sectionName, 'chiefdom_id' => $chiefdom->id],
-                        );
-                        $sections[$sectionName] = $section;
-
-                        foreach ($localityList as $localityName) {
-                            $locality = Locality::firstOrCreate(
-                                ['name' => $localityName, 'section_id' => $section->id],
-                            );
-                            $localities[$localityName] = $locality;
-                        }
-                    }
-                }
-            }
-        }
-
-        return [$regions, $districts, $chiefdoms, $sections, $localities];
-    }
-
-    /**
      * @return array{0: array<string, GrievanceType>, 1: array<string, HowReported>, 2: array<string, Priority>}
      */
     private function seedLookups(): array
     {
-        $typeNames = [
-            'Service Delivery', 'Land Dispute', 'Corruption', 'Discrimination',
-            'Environmental', 'Employment', 'Gender-Based Violence',
-            'Infrastructure', 'Health Services', 'Education',
-        ];
+        // Trimmed to the three categories actually used in production:
+        // Corruption (ACC cases), Administrative (everything else), Gender-Based Violence.
+        $typeNames = ['Corruption', 'Administrative', 'Gender-Based Violence'];
         $types = [];
         foreach ($typeNames as $name) {
             $types[$name] = GrievanceType::firstOrCreate(['name' => $name]);
@@ -291,56 +187,19 @@ class DemoDataSeeder extends Seeder
     /** @return array<string, Organization> */
     private function seedOrganizations(): array
     {
+        // The three organisations actually running on GRM-SL. Programmes are
+        // created case-by-case inside the app, not seeded here.
         $names = [
-            'Ministry of Health'        => 'MoHS',
-            'Ministry of Education'     => 'MBSSE',
-            'Ministry of Water Resources' => 'MWR',
-            'Local Council - Freetown'  => 'FCC',
-            'Anti-Corruption Commission' => 'ACC',
-            'Sierra Leone Police'       => 'SLP',
+            'Anti-Corruption Commission'            => 'ACC',
+            'Local Council - Freetown'              => 'FCC',
+            'National Commission for Social Action' => 'NaCSA',
         ];
         $out = [];
         foreach ($names as $name => $acronym) {
             $out[$name] = Organization::firstOrCreate(['name' => $name], ['acronym' => $acronym]);
         }
 
-        $this->seedDemoProgrammes($out);
-
         return $out;
-    }
-
-    /** @param  array<string, Organization>  $orgs */
-    private function seedDemoProgrammes(array $orgs): void
-    {
-        $entries = [
-            'Ministry of Health' => [
-                ['Free Healthcare Initiative', 'FHI', 'active'],
-                ['Community Health Worker Programme', 'CHWP', 'active'],
-                ['National Immunisation Programme', 'NIP', 'closed'],
-            ],
-            'Local Council - Freetown' => [
-                ['Consumer Protection Programme', 'CPP', 'active'],
-                ['Market Surveillance Initiative', 'MSI', 'active'],
-                ['Price Monitoring Scheme', 'PMS', 'active'],
-            ],
-        ];
-
-        foreach ($entries as $orgName => $rows) {
-            $org = $orgs[$orgName] ?? null;
-            if ($org === null) {
-                continue;
-            }
-            foreach ($rows as [$name, $acronym, $status]) {
-                \App\Domain\Organization\Models\Programme::firstOrCreate(
-                    ['organization_id' => $org->id, 'name' => $name],
-                    [
-                        'acronym' => $acronym,
-                        'status' => $status,
-                        'active' => $status === 'active',
-                    ],
-                );
-            }
-        }
     }
 
     /**
@@ -355,9 +214,21 @@ class DemoDataSeeder extends Seeder
      * @param  array<string, Organization> $orgs
      */
     private function seedGrievances(
-        array $regions, array $districts, array $chiefdoms, array $sections, array $localities,
         array $types, array $howReported, array $priorities, array $orgs,
     ): void {
+        // Sample canonical localities (with the full section→chiefdom→district→
+        // region chain preloaded). Demo grievances are bound to real places from
+        // geography.json rather than this seeder fabricating its own set.
+        $sampleLocalities = Locality::with('section.chiefdom.district.region')
+            ->inRandomOrder()
+            ->limit(40)
+            ->get()
+            ->values();
+        if ($sampleLocalities->isEmpty()) {
+            $this->command?->error('No canonical localities — run GeographySeeder first.');
+
+            return;
+        }
         // Complainant name pool — authentically Sierra Leonean.
         $complainants = [
             ['Fatmata', 'Kamara', 'F'],
@@ -387,17 +258,17 @@ class DemoDataSeeder extends Seeder
             [
                 'Borehole pump broken in Kissy — community without water for 8 days',
                 'The main borehole serving our section has been non-functional for over a week. Approximately 400 households are affected. Council has been notified twice with no response.',
-                'Infrastructure', 'High', GrievanceState::InProgress, 'Kissy',
+                'Administrative', 'High', GrievanceState::InProgress, 'Kissy',
             ],
             [
                 'Teacher salaries delayed at Bo Government Primary for the third month',
                 'Teachers at Bo Government Primary School have not been paid for three consecutive months. Staff are threatening to strike. Impacts approximately 600 children.',
-                'Employment', 'High', GrievanceState::UnderReview, 'Bo Town',
+                'Administrative', 'High', GrievanceState::UnderReview, 'Bo Town',
             ],
             [
                 'Land boundary dispute between neighbouring farmers in Panguma',
                 'Two families are in dispute over a cocoa farm boundary. Mediation attempts by the section chief have failed. Risk of violence escalating.',
-                'Land Dispute', 'Medium', GrievanceState::Submitted, 'Panguma',
+                'Administrative', 'Medium', GrievanceState::Submitted, 'Panguma',
             ],
             [
                 'Allegation: council official demanding bribes for market permits',
@@ -407,17 +278,17 @@ class DemoDataSeeder extends Seeder
             [
                 'Sewage overflow near primary school in Calaba Town',
                 'Untreated sewage is flowing in a drain adjacent to the primary school playground. Children have reported skin rashes. Has been flagged twice to the sanitation office.',
-                'Environmental', 'Critical', GrievanceState::InProgress, 'Calaba Town',
+                'Administrative', 'Critical', GrievanceState::InProgress, 'Calaba Town',
             ],
             [
                 'Health clinic out of stock of malaria medication',
                 'The government health clinic has had no first-line malaria treatment for 2 weeks. Patients are being turned away or asked to purchase privately at inflated prices.',
-                'Health Services', 'High', GrievanceState::Resolved, 'Kenema Town',
+                'Administrative', 'High', GrievanceState::Resolved, 'Kenema Town',
             ],
             [
                 'Road impassable to Mabonto village since heavy rains',
                 'The feeder road linking Mabonto to the main highway is completely cut off since 21 August. Farmers cannot bring produce to market. 5 villages affected.',
-                'Infrastructure', 'Medium', GrievanceState::Closed, 'Mabonto',
+                'Administrative', 'Medium', GrievanceState::Closed, 'Mabonto',
             ],
             [
                 'Reports of domestic violence at household in Makeni — police inaction',
@@ -427,22 +298,22 @@ class DemoDataSeeder extends Seeder
             [
                 'School building in Pujehun district without functioning latrines',
                 'Primary school has 180 pupils but latrines are collapsed and unusable. Girls are dropping out. Construction funds appear to have been disbursed.',
-                'Education', 'High', GrievanceState::UnderReview, 'Pujehun',
+                'Administrative', 'High', GrievanceState::UnderReview, 'Pujehun',
             ],
             [
                 'Discrimination in job hiring at local NGO office',
                 'Applicant with required qualifications alleges they were passed over for a position due to ethnicity. Multiple witnesses available.',
-                'Discrimination', 'Medium', GrievanceState::Rejected, 'Freetown',
+                'Administrative', 'Medium', GrievanceState::Rejected, 'Freetown',
             ],
             [
                 'Water quality complaint — Waterloo — smell and colour',
                 'Tap water in Waterloo has been discoloured and smelly since last Tuesday. Several households report stomach illness. Water company has not responded.',
-                'Environmental', 'High', GrievanceState::InProgress, 'Waterloo',
+                'Administrative', 'High', GrievanceState::InProgress, 'Waterloo',
             ],
             [
                 'Overloading and dangerous driving by commercial vehicles on Magburaka road',
                 'Drivers on the Magburaka-Makeni road regularly overload minibuses with 18+ passengers. Two accidents in the past month. Enforcement absent.',
-                'Service Delivery', 'Medium', GrievanceState::Submitted, 'Magburaka',
+                'Administrative', 'Medium', GrievanceState::Submitted, 'Magburaka',
             ],
             [
                 'Alleged misuse of school feeding programme stocks in Kailahun',
@@ -452,45 +323,48 @@ class DemoDataSeeder extends Seeder
             [
                 'Unpermitted tree felling near community watershed in Gbendembu',
                 'Loggers are operating near the stream that is the main water source for 3 villages. They claim to have permits but none have been shown.',
-                'Environmental', 'High', GrievanceState::UnderReview, 'Gbendembu',
+                'Administrative', 'High', GrievanceState::UnderReview, 'Gbendembu',
             ],
             [
                 'No antenatal care services at Tombo health post for 3 weeks',
                 'The midwife has been reassigned and no replacement sent. Pregnant women travel 30km for antenatal visits. 40+ women currently affected.',
-                'Health Services', 'Critical', GrievanceState::InProgress, 'Tombo',
+                'Administrative', 'Critical', GrievanceState::InProgress, 'Tombo',
             ],
             [
                 'Employment contract not honoured after 6 months',
                 'Worker was hired under a written contract by a private company but has received only partial payments. Company claims cash flow issues.',
-                'Employment', 'Low', GrievanceState::Closed, 'Port Loko Town',
+                'Administrative', 'Low', GrievanceState::Closed, 'Port Loko Town',
             ],
             [
                 'Market stall demolition in Kambia without notice',
                 'Council demolished 20+ market stalls last week without prior notice to vendors. Loss of livelihoods. Vendors claim compensation was promised but never paid.',
-                'Service Delivery', 'High', GrievanceState::Resolved, 'Kambia Town',
+                'Administrative', 'High', GrievanceState::Resolved, 'Kambia Town',
             ],
             [
                 'Abandoned construction project in Lumley — safety hazard',
                 'Half-built hotel abandoned 2 years ago is now used by children as a play area. Steel rebar exposed, open pits. Accident waiting to happen.',
-                'Infrastructure', 'Medium', GrievanceState::Trashed, 'Lumley',
+                'Administrative', 'Medium', GrievanceState::Trashed, 'Lumley',
             ],
             [
                 'Dispute over paramount chief election in Luawa',
                 'Two factions claim victory in the recent paramount chief election. Tensions high. Traditional leaders council has not convened.',
-                'Land Dispute', 'High', GrievanceState::InProgress, 'Kailahun',
+                'Administrative', 'High', GrievanceState::InProgress, 'Kailahun',
             ],
             [
                 'School fees still being charged at public school in Goderich',
                 'Government policy states no fees at public primary. Headteacher charges 50,000 Le per term claiming "development fee". Families unable to pay keeping children at home.',
-                'Education', 'Medium', GrievanceState::UnderReview, 'Goderich',
+                'Administrative', 'Medium', GrievanceState::UnderReview, 'Goderich',
             ],
         ];
 
         $admin = User::where('username', 'admin')->first();
 
-        foreach ($templates as $i => [$summary, $description, $typeName, $priorityName, $state, $localityName]) {
-            $locality = $localities[$localityName] ?? null;
-            $section = $locality?->section;
+        foreach ($templates as $i => [$summary, $description, $typeName, $priorityName, $state, $localityHint]) {
+            // $localityHint is cosmetic — kept in the template for narrative
+            // context. Actual FK is a real canonical locality, rotated through
+            // the sample pool so grievances spread across all five regions.
+            $locality = $sampleLocalities[$i % $sampleLocalities->count()];
+            $section = $locality->section;
             $chiefdom = $section?->chiefdom;
             $district = $chiefdom?->district;
             $region = $district?->region;
@@ -506,20 +380,15 @@ class DemoDataSeeder extends Seeder
             $isAnonymous = $i % 5 === 0;
 
             // Type → org routing. Corruption and GBV stick with ACC per the
-            // workflow rule; the rest route to the relevant ministry/council.
+            // workflow rule; Administrative rotates between FCC and NaCSA so
+            // the demo exercises more than one owning org.
             // Cases still in intake (Submitted/UnderReview) have no
             // classification yet — ACC will assign it.
+            $adminOrg = ($i % 2 === 0) ? 'Local Council - Freetown' : 'National Commission for Social Action';
             $typeToOrg = [
                 'Corruption' => 'Anti-Corruption Commission',
                 'Gender-Based Violence' => 'Anti-Corruption Commission',
-                'Health Services' => 'Ministry of Health',
-                'Education' => 'Ministry of Education',
-                'Environmental' => 'Ministry of Water Resources',
-                'Infrastructure' => 'Local Council - Freetown',
-                'Service Delivery' => 'Local Council - Freetown',
-                'Employment' => 'Local Council - Freetown',
-                'Discrimination' => 'Anti-Corruption Commission',
-                'Land Dispute' => 'Local Council - Freetown',
+                'Administrative' => $adminOrg,
             ];
             $classifiedOrgId = null;
             if (! in_array($state, [GrievanceState::Submitted, GrievanceState::UnderReview], true)) {
@@ -588,7 +457,7 @@ class DemoDataSeeder extends Seeder
             }
 
             // Occasional suspect for cases involving people.
-            if (in_array($typeName, ['Corruption', 'Gender-Based Violence', 'Discrimination', 'Employment'], true)) {
+            if (in_array($typeName, ['Corruption', 'Gender-Based Violence', 'Administrative', 'Administrative'], true)) {
                 [$sFirst, $sLast, $sGender, $sTitle] = $suspects[$i % count($suspects)];
                 Suspect::create([
                     'grievance_id' => $grievance->id,

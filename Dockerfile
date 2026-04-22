@@ -74,8 +74,11 @@ RUN cp .env.example .env \
  && touch database/database.sqlite
 
 # Step 8: migrate and seed. --force because we're "production" env.
+# db:seed (no --class) runs DatabaseSeeder which pulls RolePermissionSeeder
+# + GeographySeeder. Demo users / sample grievances are NOT baked — run
+# `php artisan db:seed --class=DemoDataSeeder` after first `up` if you want them.
 RUN php artisan migrate --force \
- && php artisan db:seed --force --class=Database\\Seeders\\RolePermissionSeeder \
+ && php artisan db:seed --force \
  && php artisan config:cache \
  && php artisan route:cache || true
 
@@ -84,5 +87,13 @@ RUN php artisan migrate --force \
 RUN chmod -R 777 storage bootstrap/cache
 
 EXPOSE 8000
+
+# Entrypoint syncs compose-injected env vars (MAIL_*, APP_URL, AUTH_MODEL)
+# into /app/.env at container start — otherwise Laravel's dotenv loader
+# overwrites them with whatever the baked .env says, and compose values never
+# reach env()/config().
+COPY deploy/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
 CMD ["php", "-d", "memory_limit=256M", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]

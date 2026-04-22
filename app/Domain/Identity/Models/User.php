@@ -108,6 +108,12 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function preferredChannels(): array
     {
+        // Called from notification via() methods, which in local/strict mode
+        // fail with LazyLoadingViolationException if the relation wasn't
+        // eager-loaded. loadMissing() is a no-op when the relation is already
+        // present, so this is safe and cheap.
+        $this->loadMissing('notificationPreference');
+
         return $this->notificationPreference?->enabledChannels()
             ?? NotificationPreference::defaultChannels();
     }

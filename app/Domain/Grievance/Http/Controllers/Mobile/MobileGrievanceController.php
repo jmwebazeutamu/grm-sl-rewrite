@@ -7,10 +7,12 @@ namespace App\Domain\Grievance\Http\Controllers\Mobile;
 use App\Domain\Grievance\Actions\AcceptGrievance;
 use App\Domain\Grievance\Actions\AssignGrievance;
 use App\Domain\Grievance\Actions\BeginClosureReview;
+use App\Domain\Grievance\Actions\CategorizeGrievance;
 use App\Domain\Grievance\Actions\CloseGrievance;
 use App\Domain\Grievance\Actions\EscalateAndReopen;
 use App\Domain\Grievance\Actions\PostAction;
 use App\Domain\Grievance\Actions\RejectGrievance;
+use App\Domain\Grievance\Actions\SetOrgClassification;
 use App\Domain\Grievance\Actions\SubmitGrievance;
 use App\Domain\Grievance\Actions\UploadAttachment;
 use App\Domain\Grievance\Enums\ActionType;
@@ -214,7 +216,9 @@ class MobileGrievanceController extends Controller
                 'first_name' => $s->first_name,
                 'last_name' => $s->last_name,
                 'title' => $s->title,
+                'phone_number' => $s->phone_number,
                 'is_beneficiary' => $s->is_beneficiary,
+                'beneficiary_id_number' => $s->beneficiary_id_number,
             ])->values(),
             'attachments' => $grievance->attachments->map(fn ($a) => [
                 'id' => $a->id,
@@ -235,6 +239,8 @@ class MobileGrievanceController extends Controller
                 'can_edit' => $request->user()->can('update', $grievance),
                 'can_transition' => $request->user()->can('transition', $grievance),
                 'can_assign' => $request->user()->can('assign', $grievance),
+                'can_classify' => $request->user()->can('classify', $grievance),
+                'can_org_classify' => $request->user()->can('orgClassify', $grievance),
                 'can_review' => $request->user()->can('review', $grievance),
                 'can_upload_attachment' => $request->user()->can('uploadAttachment', $grievance),
                 'can_closure_action' => $request->user()->can('closureAction', $grievance),
@@ -271,16 +277,20 @@ class MobileGrievanceController extends Controller
         $this->authorize('uploadAttachment', $grievance);
 
         $request->validate([
-            'file' => ['required', 'file', 'max:10240'],
+            'file' => ['required', 'file', 'max:10240', 'mimes:pdf,doc,docx,xls,xlsx,jpg,jpeg,png'],
             'description' => ['nullable', 'string', 'max:500'],
         ]);
 
-        $attachment = $upload(
+        // Action signature: (Grievance, array $files, ?string $description, User $uploader).
+        // Mobile uploads one file at a time; wrap in an array.
+        $created = $upload(
             $grievance,
-            $request->file('file'),
-            $request->user(),
+            [$request->file('file')],
             $request->input('description'),
+            $request->user(),
         );
+
+        $attachment = $created[0];
 
         return response()->json([
             'id' => $attachment->id,
@@ -319,9 +329,41 @@ class MobileGrievanceController extends Controller
             'officer_id' => ['required', 'integer', 'exists:person,id'],
         ]);
 
-        $assign($grievance, $data['officer_id'], $request->user());
+        $officer = \App\Domain\Identity\Models\User::findOrFail($data['officer_id']);
+        $assign($grievance, $officer, $request->user());
 
         return response()->json(['ok' => true]);
+    }
+
+    /** AUTH — set category + implementing organisation (accepted → assigned). */
+    public function categorize(int $id, Request $request, CategorizeGrievance $categorize): JsonResponse
+    {
+        $grievance = Grievance::findOrFail($id);
+        $this->authorize('classify', $grievance);
+
+        $data = $request->validate([
+            'category' => ['required', 'in:corruption,administrative'],
+            'classified_organization_id' => ['required', 'integer', 'exists:organization,id'],
+        ]);
+
+        $categorize($grievance, $data, $request->user());
+
+        return response()->json(['ok' => true, 'state' => $grievance->fresh()->state->value]);
+    }
+
+    /** AUTH — set sub-classification (assigned → in_progress). */
+    public function classify(int $id, Request $request, SetOrgClassification $classify): JsonResponse
+    {
+        $grievance = Grievance::findOrFail($id);
+        $this->authorize('orgClassify', $grievance);
+
+        $data = $request->validate([
+            'org_classification_id' => ['required', 'integer', 'exists:org_grievance_types,id'],
+        ]);
+
+        $classify($grievance, $data['org_classification_id'], $request->user());
+
+        return response()->json(['ok' => true, 'state' => $grievance->fresh()->state->value]);
     }
 
     public function beginClosure(int $id, Request $request, BeginClosureReview $begin): JsonResponse
@@ -339,8 +381,11 @@ class MobileGrievanceController extends Controller
         $grievance = Grievance::findOrFail($id);
         $this->authorize('closureAction', $grievance);
 
-        $data = $request->validate(['comment' => ['nullable', 'string', 'max:2000']]);
-        $close($grievance, $request->user(), $data['comment'] ?? null);
+        $data = $request->validate([
+            'comment' => ['required', 'string', 'min:10', 'max:2000'],
+        ]);
+
+        $close($grievance, $data['comment'], $request->user());
 
         return response()->json(['ok' => true, 'state' => $grievance->fresh()->state->value]);
     }
@@ -350,8 +395,11 @@ class MobileGrievanceController extends Controller
         $grievance = Grievance::findOrFail($id);
         $this->authorize('closureAction', $grievance);
 
-        $data = $request->validate(['comment' => ['nullable', 'string', 'max:2000']]);
-        $escalate($grievance, $request->user(), $data['comment'] ?? null);
+        $data = $request->validate([
+            'comment' => ['required', 'string', 'min:10', 'max:2000'],
+        ]);
+
+        $escalate($grievance, $data['comment'], $request->user());
 
         return response()->json(['ok' => true, 'state' => $grievance->fresh()->state->value]);
     }

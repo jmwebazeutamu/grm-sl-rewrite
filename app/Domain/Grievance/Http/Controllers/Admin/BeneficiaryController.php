@@ -17,9 +17,18 @@ class BeneficiaryController extends Controller
 {
     public function index(Request $request): Response
     {
+        // grievance.programme / implementingOrganization load the grievance-level
+        // fallback for listings where the beneficiary row itself has nulls
+        // (most legacy-imported beneficiaries do).
         $query = Suspect::query()
             ->where('grievance_suspect.is_beneficiary', true)
-            ->with(['programme:id,name', 'implementingOrganization:id,name'])
+            ->with([
+                'programme:id,name',
+                'implementingOrganization:id,name',
+                'grievance:id,programme_id,implementing_organization_id',
+                'grievance.programme:id,name',
+                'grievance.implementingOrganization:id,name',
+            ])
             ->join('grievance', 'grievance.id', '=', 'grievance_suspect.grievance_id')
             ->select([
                 'grievance_suspect.*',

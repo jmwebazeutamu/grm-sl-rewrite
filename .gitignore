@@ -21,3 +21,6 @@ Homestead.json
 Homestead.yaml
 /tests/Browser/screenshots
 /tests/Browser/console
+
+# Real grievance migration source — contains complainer PII, never commit
+database/seeders/grm_data*.csv

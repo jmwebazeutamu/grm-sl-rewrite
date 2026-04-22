@@ -99,17 +99,15 @@ function onBeneficiaryToggle(index: number): void {
     }
 }
 
-function onProgrammeChange(index: number): void {
-    const s = form.suspects[index];
-    if (s.programme_id === null) return;
-    const prog = props.programmes.find((p) => p.id === s.programme_id);
-    if (prog && prog.organization_id) {
-        s.implementing_organization_id = prog.organization_id;
-    }
+function onSuspectOrgChange(index: number): void {
+    // Resetting the programme forces the user to pick one that actually
+    // belongs to the freshly-selected organisation.
+    form.suspects[index].programme_id = null;
 }
 
-function isOrgLocked(index: number): boolean {
-    return form.suspects[index].programme_id !== null;
+function programmesForSuspectOrg(organizationId: number | null) {
+    if (organizationId === null) return [];
+    return props.programmes.filter((p) => p.organization_id === organizationId);
 }
 
 const grievanceProgrammeOptions = computed(() =>
@@ -399,17 +397,17 @@ async function submit(): Promise<void> {
                                 <span v-if="form.errors[`suspects.${i}.beneficiary_id_number`]" class="mt-1 block text-xs text-rose-600">{{ form.errors[`suspects.${i}.beneficiary_id_number`] }}</span>
                             </label>
                             <label class="block text-sm">
-                                <span class="block text-slate-700 mb-1">Project</span>
-                                <select v-model="suspect.programme_id" class="block w-full rounded-lg border-slate-300 px-3 py-2 text-sm" @change="onProgrammeChange(i)">
-                                    <option :value="null">— Other / not listed —</option>
-                                    <option v-for="p in programmes" :key="p.id" :value="p.id">{{ p.name }}</option>
+                                <span class="block text-slate-700 mb-1">Implementing organisation</span>
+                                <select v-model="suspect.implementing_organization_id" class="block w-full rounded-lg border-slate-300 px-3 py-2 text-sm" @change="onSuspectOrgChange(i)">
+                                    <option :value="null">— Select —</option>
+                                    <option v-for="o in organizations" :key="o.id" :value="o.id">{{ o.name }}</option>
                                 </select>
                             </label>
                             <label class="block text-sm">
-                                <span class="block text-slate-700 mb-1">Implementing organisation</span>
-                                <select v-model="suspect.implementing_organization_id" :disabled="isOrgLocked(i)" :class="['block w-full rounded-lg border-slate-300 px-3 py-2 text-sm', isOrgLocked(i) ? 'bg-slate-100 text-slate-500' : '']">
-                                    <option :value="null">— Select —</option>
-                                    <option v-for="o in organizations" :key="o.id" :value="o.id">{{ o.name }}</option>
+                                <span class="block text-slate-700 mb-1">Project</span>
+                                <select v-model="suspect.programme_id" :disabled="suspect.implementing_organization_id === null" :class="['block w-full rounded-lg border-slate-300 px-3 py-2 text-sm', suspect.implementing_organization_id === null ? 'bg-slate-100 text-slate-500' : '']">
+                                    <option :value="null">— Other / not listed —</option>
+                                    <option v-for="p in programmesForSuspectOrg(suspect.implementing_organization_id)" :key="p.id" :value="p.id">{{ p.name }}</option>
                                 </select>
                             </label>
                         </div>

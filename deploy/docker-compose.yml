@@ -1,0 +1,32 @@
+services:
+  grm-sl:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: grm-sl-rewrite:dev
+    container_name: grm-sl
+    ports:
+      - "8081:8000"
+    # Secrets + runtime overrides come from deploy/.env (gitignored).
+    # These environment vars are read by Laravel before the baked-in
+    # .env file, so values here always win — no rebuild needed to
+    # rotate a password or change a mail host.
+    env_file:
+      - .env
+    environment:
+      APP_URL: https://grm-sl.quasar.ug
+      # Laravel 11 doesn't ship config/auth.php in source; vendor default
+      # points at App\Models\User, but our User lives in a domain namespace.
+      # Override via env so a fresh container always resolves the right model.
+      AUTH_MODEL: 'App\Domain\Identity\Models\User'
+    volumes:
+      # Persist runtime data across container rebuilds. Without these,
+      # a `docker compose up --build` wipes the SQLite database and
+      # every uploaded attachment.
+      - grm_sl_db:/app/database
+      - grm_sl_storage:/app/storage
+    restart: unless-stopped
+
+volumes:
+  grm_sl_db:
+  grm_sl_storage:

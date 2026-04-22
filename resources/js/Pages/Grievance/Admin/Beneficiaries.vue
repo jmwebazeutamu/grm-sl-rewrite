@@ -147,10 +147,18 @@ function fmtDate(d) {
                             {{ [b.first_name, b.last_name].filter(Boolean).join(' ') || '—' }}
                         </td>
                         <td class="px-4 py-2.5 text-sm text-gray-700">
-                            {{ b.programme?.name ?? '' }}<span v-if="!b.programme" class="text-gray-400">—</span>
+                            <template v-if="b.programme || b.grievance?.programme">
+                                {{ (b.programme ?? b.grievance?.programme).name }}
+                                <span v-if="!b.programme && b.grievance?.programme" class="text-[10px] text-gray-400 ml-1" title="From the linked grievance">(case)</span>
+                            </template>
+                            <span v-else class="text-gray-400">—</span>
                         </td>
                         <td class="px-4 py-2.5 text-sm text-gray-700">
-                            {{ b.implementing_organization?.name ?? '' }}<span v-if="!b.implementing_organization" class="text-gray-400">—</span>
+                            <template v-if="b.implementing_organization || b.grievance?.implementing_organization">
+                                {{ (b.implementing_organization ?? b.grievance?.implementing_organization).name }}
+                                <span v-if="!b.implementing_organization && b.grievance?.implementing_organization" class="text-[10px] text-gray-400 ml-1" title="From the linked grievance">(case)</span>
+                            </template>
+                            <span v-else class="text-gray-400">—</span>
                         </td>
                         <td class="px-4 py-2.5">
                             <Link :href="route('admin.grievances.show', b.grievance_id)" class="font-mono text-xs font-semibold text-blue-600 hover:text-blue-800 hover:underline">
